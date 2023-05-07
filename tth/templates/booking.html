@@ -1,0 +1,109 @@
+{% extends 'Navbar1.html' %}
+{% load static %}
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'css/booking.css' %}">
+</head>
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/booking.css' %}">
+{% csrf_token %}
+   <form action="{% url 'booked' %}" method = "post">
+       {% csrf_token %}
+ <div class="container">
+        <form class="form-group">
+            <div id="form">
+                <h1 class="text-white text-center">Bookings Available</h1>
+
+                <div id="first-group">
+
+                    <div id="content">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" name="firstname" id="input-group" placeholder="First name">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="number" name="number" id="input-group" placeholder="Phone number">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <input type="text" name="depdate" id="input-group" placeholder="Departure Date">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="number" name="content" id="input-group" placeholder="no of guest">
+                    </div>
+
+                </div>
+
+                <div id="second-group">
+
+                    <div id="content">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" name="lname" id="input-group" placeholder="Last name">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <input type="email" name="email" id="input-group" placeholder="Email">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <input type="text" name="ardate" id="input-group" placeholder="Arrival Date">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <input type="text" name="room" id="input-group" placeholder="room type">
+                    </div>
+
+                </div>
+
+                <button type="submit" value="Submit" id="submit-btn">Book Now</button>
+
+            </div>
+        </form>
+    </div>
+<!--<h1>Book a Hotel</h1>
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+  <form method="POST" action="{% url 'hotel' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="check_in_date">Check-in Date:</label>
+      <input type="date" class="form-control" id="check_in_date" name="check_in_date" required>
+    </div>
+    <div class="form-group">
+      <label for="check_out_date">Check-out Date:</label>
+      <input type="date" class="form-control" id="check_out_date" name="check_out_date" required>
+    </div>
+    <div class="form-group">
+      <label for="num_guests">Number of Guests:</label>
+      <input type="number" class="form-control" id="num_guests" name="num_guests" min="1" required>
+    </div>
+    <div class="form-group">
+      <label for="hotel">Hotel:</label>
+      <select class="form-control" id="hotel" name="hotel" required>
+        {% for hotel in hotels %}
+          <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>-->
+{% endblock %}
+</html>

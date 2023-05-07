@@ -1,0 +1,56 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+</head>
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p>This is our About us page for our Project</p>
+  <p>Travel, Tourism and Hospitality</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <!--<img src="/w3images/team1.jpg" alt="Jane" style="width:100%">-->
+      <div class="container">
+        <h2>Arrchit Kumar</h2>
+        <p class="title">Leader</p>
+        <p><B><U>ID:</U></B>2000030014</p>
+        <p><B><U>Email:</U></B>archit02018@gmail.com</p>
+        <p>PFSD cluster-1 section-3</p>
+        {% csrf_token %}
+                  <form action="{% url 'contact' %}">
+                      {% csrf_token %}
+        <p><button class="submit">Contact</button></p>
+                  </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <!--<img src="/w3images/team2.jpg" alt="Mike" style="width:100%">-->
+      <div class="container">
+        <h2>P.Vignesh</h2>
+        <p class="title">Member</p>
+        <p><B><U>ID:</U></B>2100030079</p>
+        <p><B><U>Email:</U></B>bspvigneshbude@gmail.com</p>
+        <p>PFSD cluster-1 section-3</p>
+        {% csrf_token %}
+                  <form action="{% url 'contact' %}">
+                      {% csrf_token %}
+        <p><button class="submit">Contact</button></p>
+                  </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+</html>

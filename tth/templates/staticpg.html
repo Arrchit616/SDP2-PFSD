@@ -1,0 +1,55 @@
+{% extends 'navbar1.html' %}
+{% load static %}
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'css/stat1.css' %}">
+</head>
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/stat1.css' %}">
+<link rel="stylesheet" href="{% static 'css/dropdownli.css' %}">
+
+<div class="diwali-top-section">
+        <h1 class="diwali-top-section-heading">
+            Explore the World with fun and joy
+        </h1>
+    </div>
+<center><div class="dropdown">
+<button class="dropbtn"> Zones</button>
+<div class="dropdown-content">
+    <div class="dropdown"><button class="dropbtn">North</button><a href="{% url 'ne' %}"> East </a><a href="{% url 'nw' %}"> West </a></div>
+<a href="{% url 'south' %}"> South </a>
+</div>
+</div>  </center>
+    <div class="diwali-bottom-section">
+        <div class="d-flex flex-row justify-content-center">
+            <div class="diwali-card-container">
+                <img src="https://img.freepik.com/free-vector/summer-landscape-background-zoom_52683-42067.jpg?w=1060&t=st=1680339818~exp=1680340418~hmac=d5b6bf753047dc937365d738730a987dbe3804189a6089dd0d96389fb44a9854" class="diwali-card-image" />
+                <h1 class="diwali-card-name">Beaches - Seashores</h1>
+                <button class="btn btn-primary">Explore now</button>
+            </div>
+            <div class="diwali-card-container">
+                <img src="https://img.freepik.com/free-photo/beautiful-shot-isa-khan-s-tomb-delhi-india-cloudy-sky_181624-20750.jpg?w=1060&t=st=1680340161~exp=1680340761~hmac=e6b4e7058b73ad2dba7d2420195403c1532d69e74f331850b0c5f2f4eab24cf7" class="diwali-card-image" />
+                <h1 class="diwali-card-name">Historical Places</h1>
+                {% csrf_token %}
+                  <form action="{% url 'travel2' %}">
+                      {% csrf_token %}
+                <button class="submit">Explore now</button>
+                  </form>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="diwali-card-container">
+                <img src="https://img.freepik.com/premium-photo/beautiful-architecture-ancient-ruins-temple-hampi-sunset-karnataka-india_211251-1052.jpg?w=1060" class="diwali-card-image" />
+                <h1 class="diwali-card-name">Temples</h1>
+                <button class="btn btn-primary">Explore now</button>
+            </div>
+            <div class="diwali-card-container">
+                <img src="https://img.freepik.com/free-photo/aerial-view-beautiful-sky-road-top-mountains-with-green-jungle-nan-province-thailand_335224-1063.jpg?w=1060&t=st=1680340402~exp=1680341002~hmac=21522d03aeab4ff881a43a113fad9860cdf322eef4dbe507b570b11dc1f94db1" class="diwali-card-image" />
+                <h1 class="diwali-card-name">Hill Stations</h1>
+                <button class="btn btn-primary">Explore now</button>
+            </div>
+        </div>
+        <button class="btn btn-primary">View More</button>
+    </div>
+{% endblock %}
+</html>
